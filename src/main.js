@@ -1,8 +1,7 @@
 import kaplay from "kaplay";
 import sc00 from "./scenes/sc-00";
 import level1 from "./scenes/level1";
-
-
+import gameover from "./scenes/gameover";
 const k = kaplay({
 	height: 480,
 	width: 640,
