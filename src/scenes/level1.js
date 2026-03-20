@@ -1,7 +1,9 @@
 import k from "../main";
+import gameover from "./gameover";
 export default function level1() {
     return() =>{
-        k.setGravity(2750);
+
+		k.setGravity(2750);
 
 
 
@@ -25,7 +27,7 @@ k.add([
 
 
 const player = k.add([k.circle(20),
-	k.pos(320, 460),
+	k.pos(120, 460),
 	k.color(k.WHITE),
 	k.body(),
 	k.area(),]);
@@ -41,23 +43,37 @@ const ceiling = k.add([k.rect(640,20),
 	k.area(),
 	k.color("#99ffff")]);
 
-const pipedown = k.add([k.rect(75, 175),
-	k.pos(280, 305),
+
+	// wenn spieler brührt zu gameover szene wechseln
+    player.onCollide("danger", () => {
+        k.go("gameover");
+		});
+
+const pipedown = k.add([k.rect(75, 165),
+	k.pos(400, 305),
 	k.color(k.RED),
-	k.area()
+	k.area(),
+	k.body(),
+	k.fixed(),
+	"danger" //macht das objekt gefährlich
 ]);
 k.onUpdate(() => {
 pipeup.move(-120, 0);
   pipedown.move(-120, 0); // lässt die röhre nach links bewegen
   });
 
-	const pipeup = k.add([k.rect(75, 175),
-	k.pos(280, 0),
+	const pipeup = k.add([k.rect(75, 165),
+	k.pos(400, 0),
 	k.color(k.RED),
-	k.area()]);
+	k.area(),
+	k.body({isStatic: true}),
+	"danger"//markiert das objekt gefährlich
+	]);
 	// röhre gemeinsam höhe 350 programieren
 	// bewegung der röhren und neue erstellen
 
-	player.onKeyPress("space", () => {	player.jump();
+
+
+	player.onKeyPress("space", () => {	player.jump(500);
 });};
 }
