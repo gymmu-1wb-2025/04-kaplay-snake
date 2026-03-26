@@ -8,7 +8,7 @@ export default function gameover() {
             k.pos(320,240),
             k.anchor("center"),
             k.color(k.RED)]);
-            k.onKeyPress("enter", () => {
+            k.onKeyPress("space", () => {
                 k.go("level1");
             });
 
