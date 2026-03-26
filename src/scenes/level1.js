@@ -141,18 +141,18 @@ const coin = k.add([
 ]);
 
 
-coin.active = true;
+coin.active = true;//aktiviert den coin, damit er berührt werden kann
 
 player.onCollide("good", () => { // wenn coin berührt wird es ausgelöst
 	 if (!coin.active) return; // verhindert mehrfaches Auslösen
-    coin.active = false
+    coin.active = false // deaktiviert den coin, damit er nicht mehr berührt werden kann
     coinScore += 1; // Punktzahl erhöhen
     coinText.text = "Coins: " + coinScore; // anzeige wird aktualisiert
 
 	coin.use(k.opacity(0)); // Coin wird unsichtbar
  coin.use(k.area({ enabled: false })); // berührung aus, damit nicht mehrfach auslösbar
  coin.use(k.body({ enabled: false }));// Physik aus, damit er nicht mehr mit dem Spieler kollidiert
-    //  2 Sekunden warten bis das ausgeführt wird
+    //  2 Sekunden warten bis es ausgeführt wird
     k.wait(pipespawning, () => {
 
     // Coin neu positionieren
@@ -160,7 +160,7 @@ player.onCollide("good", () => { // wenn coin berührt wird es ausgelöst
 	coin.use(k.opacity(1)); // wieder sichtbar
 	 coin.use(k.area({ enabled: true })); //berührung  wieder an
 	 coin.use(k.body({ enabled: true, isStatic: true })); // fixiert, und physik wieder an
-	 coin.active = true;
+	 coin.active = true; // wieder aktivieren
 
 	});
 });
