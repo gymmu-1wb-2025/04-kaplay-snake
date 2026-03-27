@@ -34,4 +34,13 @@ canvas {
     margin-left: 20px;
 }
 
+.ball2 {
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 20px;
+    display: block;
+    margin-left: 20px;
+}
+
 /*Den Ball angepasst
