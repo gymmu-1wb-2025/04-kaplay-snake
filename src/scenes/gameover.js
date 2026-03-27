@@ -1,9 +1,10 @@
 import k from "../main";
 
-export default function sc00() {
-    return() =>{
+
+export default function gameover() {
+    return () =>{
         k.add([
-            k.text("Willkomen"),
+            k.text("Game Over"),
             k.pos(320,240),
             k.anchor("center"),
             k.color(k.RED)]);
