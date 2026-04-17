@@ -43,4 +43,45 @@ canvas {
     margin-left: 20px;
 }
 
-/*Den Ball angepasst
+/*Den Ball angepasst */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: lightblue;
+    color: black;
+    margin: 0;
+    line-height: 1.7;
+
+}
+
+/* Allgemeines Layout */
+
+.Design {
+    max-width: 300px;
+    margin: 40px auto;
+    padding: 30px;
+
+    border-radius: 16px;
+}
+
+h1  {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+/* Änderung vom Obertitel */
+
+h2 {
+    margin-top: 35px;
+    padding-left: 12px;
+    font-size: 22px;
+}
+
+/* Änderung von den Untertiteln */
+
+p {
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+/* Änderung vom Text */
